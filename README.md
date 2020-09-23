@@ -77,3 +77,33 @@ Fetch.destroy(`thisIsADeleteRoute/{$id}`).then((repsonse) => {
 ## Errors
 
 When the response is not the right format, i.e., it expects JSON, but receives text or HTML, the handleFetchResponse sets the status prop to 'error' and automatically puts out a console.error() with the server response. 
+
+### Extended Usage
+
+What I ended up doing, due to the scope of the project and the number of self contained modules in the project, was creating an Action class in each module. The Action class would be contain static methods that would return the Fetch requests.
+
+```typescript
+export class Action {
+  public async static loadValuesById(id: number) {
+    return Fetch.get(`theRouteToValues/${id}`);
+  }
+}
+```
+
+This allowed me to contain all of my Fetch requests in one place for each module, rather than scattered all over the codebase. Is it a good solution? Some probably don't think so, but it was very helpful for this project. I don't think it's exactly an anti-pattern, but the alternative was having many Fetch calls scattered around the modules. 
+
+```typescript
+// Using this pattern, I can just call Action.loadValuesById(1) from anywhere, with the 
+// proper imports, and then handle the response with the same .then() as the Fetch calls
+
+import { Action } from '../Action/Action.js';
+
+Action.loadValuesById(1).then((response) => {
+  if (response.status === 'success') {
+    // handle successful response
+  } else {
+    console.error('There was an error');
+  }
+});
+
+```
