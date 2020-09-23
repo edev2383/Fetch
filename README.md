@@ -53,7 +53,7 @@ Fetch.store('thisIsAPostRoute', {id: 5, state: 'active'}).then((repsonse) => {
 ```
 > PUT Request
 ```typescript
-Fetch.update('thisIsAPutRoute', {id: 5, state: 'active'}).then((repsonse) => {
+Fetch.update('thisIsAPutRoute', {id: 5, state: 'inactive'}).then((repsonse) => {
   if (response.status === 'success') {
     //handle successful response
     console.log(response.data);
