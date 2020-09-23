@@ -1,3 +1,14 @@
+/**
+ * Simple function to determine if the response is JSON format or not
+ * this way we can always return a string/html from the server response
+ * and if its JSON format and we're expecting JSON format, then we can
+ * parse it after the fact, rather than reply on the .json() method in
+ * the fetch request
+ *
+ * @param string
+ *
+ * @returns boolean
+ */
 export function isJSON(string: string) {
   try {
     if (JSON.parse(string)) {
@@ -15,6 +26,9 @@ export interface FetchResponseInterface {
 /**
  * Returns {status: 'error' || ''success',
  *          data: JSON || text}
+ *
+ * TODO - more documentation on these helper methods
+ *
  * @param request The request object
  * @param data
  */
