@@ -42,7 +42,7 @@ Fetch.get('thisismyroute').then((response) => {
 
 > POST Request
 ```typescript
-Fetch.store('thisisapostroute', {id: 5, state: 'active'}).then((repsonse) => {
+Fetch.store('thisIsAPostRoute', {id: 5, state: 'active'}).then((repsonse) => {
   if (response.status === 'success') {
     //handle successful response
     console.log(response.data);
@@ -51,7 +51,29 @@ Fetch.store('thisisapostroute', {id: 5, state: 'active'}).then((repsonse) => {
   }
 })
 ```
-
+> PUT Request
+```typescript
+Fetch.update('thisIsAPutRoute', {id: 5, state: 'active'}).then((repsonse) => {
+  if (response.status === 'success') {
+    //handle successful response
+    console.log(response.data);
+  } else {
+    console.error('There was an error');
+  }
+})
+```
+> DELETE Request
+```typescript
+const id = 5
+Fetch.destroy(`thisIsADeleteRoute/{$id}`).then((repsonse) => {
+  if (response.status === 'success') {
+    //handle successful response
+    console.log(response.data);
+  } else {
+    console.error('There was an error');
+  }
+})
+```
 ## Errors
 
 When the response is not the right format, i.e., it expects JSON, but receives text or HTML, the handleFetchResponse sets the status prop to 'error' and automatically puts out a console.error() with the server response. 
