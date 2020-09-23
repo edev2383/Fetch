@@ -90,7 +90,7 @@ export class Action {
 }
 ```
 
-This allowed me to contain all of my Fetch requests in one place for each module, rather than scattered all over the codebase. Is it a good solution? Some probably don't think so, but it was very helpful for this project. I don't think it's exactly an anti-pattern, but the alternative was having many Fetch calls scattered around the modules. 
+This allowed me to contain all of my Fetch requests in one place for each module, rather than scattered all over the codebase. Is it a good solution? Some probably don't think so, but it was very helpful for this project. I don't think it's exactly an anti-pattern, but the alternative was having many Fetch calls scattered around the modules. The added bonus of using this pattern, all of my routes for the given module were in one place and if any other module on the site needed to access that route, I wouldn't need to write another Fetch() request, I would just import the proper Action class and use the already existing method. 
 
 ```typescript
 // Using this pattern, I can just call Action.loadValuesById(1) from anywhere, with the 
