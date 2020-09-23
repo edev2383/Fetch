@@ -80,7 +80,7 @@ When the response is not the right format, i.e., it expects JSON, but receives t
 
 ### Extended Usage
 
-What I ended up doing, due to the scope of the project and the number of self contained modules in the project, was creating an Action class in each module. The Action class would be contain static methods that would return the Fetch requests.
+What I ended up doing, due to the scope of the project and the number of self contained modules in the project, was creating an Action class in each module. The Action class would act as a container for static methods that would then return the Fetch response.
 
 ```typescript
 export class Action {
