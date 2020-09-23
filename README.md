@@ -19,7 +19,7 @@ async function saveValueToServer() {
 }
 ```
 
-I would either then handle the returned values inside of each custom function, or return that function and handle the response in an external .then() call. This __Fetch__ class is attempt to follow the DRY principle and create more readable code in the process. 
+I would either then handle the returned values inside of each custom function, or return that function and handle the response in an external .then() call. This __Fetch__ class is an attempt to follow the DRY principle and create more readable code in the process. 
 
 ## Usage
 
