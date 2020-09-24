@@ -82,7 +82,7 @@ Fetch.destroy(`thisIsADeleteRoute/{$id}`).then((repsonse) => {
 
 ### OPTIONS
 > Default options can be changed by passing an object as the 3rd param
- - TODO - Need to add the docs for this
+ - \[On the TODO list\]
 
 ## Errors
 
@@ -123,3 +123,4 @@ Action.loadValuesById(1).then((response) => {
 
 - Early on, I removed the options object for Fetch.get(). I'm not 100% on why I did that, but as a next version, I need to reinstate that as the 3rd attribute. it's unrealistic to think that a get request would NEVER need to change the default Request options
 - Need to give proper comments for the handleFetchRequest loop 
+- Docs for the Options object
