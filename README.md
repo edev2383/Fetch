@@ -88,6 +88,11 @@ Fetch.destroy(`thisIsADeleteRoute/{$id}`).then((repsonse) => {
 
 When the response is not the right format, i.e., it expects JSON, but receives text or HTML, the handleFetchResponse sets the status prop to 'error' and automatically puts out a console.error() with the server response. 
 
+## Mistakes I knew I was making
+
+- Early on, I removed the options object for Fetch.get(). I'm not 100% on why I did that, but as a next version, I need to reinstate that as the 3rd attribute. it's unrealistic to think that a get request would NEVER need to change the default Request options
+- Need to give proper comments for the handleFetchRequest loop 
+
 ### Extended Usage
 
 What I ended up doing, due to the scope of the project and the number of self contained modules in the project, was creating an Action class in each module. The Action class would act as a container for static methods that would then return the Fetch response.
