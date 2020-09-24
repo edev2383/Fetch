@@ -33,7 +33,7 @@ Fetch.get('thisismyroute').then((response) => {
   // in the handleFetchResponse() method in the /Lib/Lib.ts file
   if (response.status === 'success') {
     // handle successful response
-    console.log(response.data)'
+    console.log(response.data);
   } else {
     console.error('There was an error');
   }
