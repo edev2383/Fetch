@@ -25,12 +25,17 @@ I would either then handle the returned values inside of each custom function, o
 
 Usage of the Fetch request should be dead simple
 
+Below is a barebones GET request
+```typescript
+Fetch.get(`/some/route/here`);
+```
+That request returns the FetchResponseInterface, which has two props, __status__ and __data__. You can then use a _.then()_ to access the returned object. 
+
 ### GET Request
 ```typescript
 Fetch.get('thisismyroute').then((response) => {
-  // regardless of the request, response returns an object with two properties
-  // status and data. Data is your server response. Status is decided and set
-  // in the handleFetchResponse() method in the /Lib/Lib.ts file
+  // response.status is decided and set in the handleFetchResponse() method in the /Lib/Lib.ts file
+  // response.data is checked for JSON format, if found, it gets parsed, otherwise it's passed as text
   if (response.status === 'success') {
     // handle successful response
     console.log(response.data);
