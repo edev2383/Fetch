@@ -74,6 +74,11 @@ Fetch.destroy(`thisIsADeleteRoute/{$id}`).then((repsonse) => {
   }
 })
 ```
+
+### OPTIONS
+> Default options can be changed by passing an object as the 3rd param
+ - TODO - Need to add the docs for this
+
 ## Errors
 
 When the response is not the right format, i.e., it expects JSON, but receives text or HTML, the handleFetchResponse sets the status prop to 'error' and automatically puts out a console.error() with the server response. 
