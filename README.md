@@ -29,7 +29,7 @@ Below is a barebones GET request
 ```typescript
 Fetch.get(`/some/route/here`);
 ```
-That request returns the FetchResponseInterface, which has two props, __status__ and __data__. You can then use a _.then()_ to access the returned object. 
+That request returns the FetchResponseInterface, which has two props, __status__ and __data__. You can then use a _.then()_ to access the returned object. An example of each Request type is below.
 
 ### GET Request
 ```typescript
