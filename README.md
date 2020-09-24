@@ -1,7 +1,7 @@
 # Fetch
 An abstraction to JS async/await fetch() requests to standardize the response format
 
-While working on a large project with many async/await fetch() requests, I wanted to eliminate all of the extraneous code from each request. All of my requests followed the same format:
+While working on a large project with many async/await fetch() requests, I wanted to eliminate all of the extraneous code from each request. All of my requests followed a similar format:
 
 ```javascript
 
