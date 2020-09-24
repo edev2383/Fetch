@@ -25,7 +25,7 @@ I would either then handle the returned values inside of each custom function, o
 
 Usage of the Fetch request should be dead simple
 
-> GET Request
+### GET Request
 ```typescript
 Fetch.get('thisismyroute').then((response) => {
   // regardless of the request, response returns an object with two properties
@@ -40,7 +40,7 @@ Fetch.get('thisismyroute').then((response) => {
 })
 ```
 
-> POST Request
+### POST Request
 ```typescript
 Fetch.store('thisIsAPostRoute', {id: 5, state: 'active'}).then((repsonse) => {
   if (response.status === 'success') {
@@ -51,7 +51,7 @@ Fetch.store('thisIsAPostRoute', {id: 5, state: 'active'}).then((repsonse) => {
   }
 })
 ```
-> PUT Request
+### PUT Request
 ```typescript
 Fetch.update('thisIsAPutRoute', {id: 5, state: 'inactive'}).then((repsonse) => {
   if (response.status === 'success') {
@@ -62,7 +62,7 @@ Fetch.update('thisIsAPutRoute', {id: 5, state: 'inactive'}).then((repsonse) => {
   }
 })
 ```
-> DELETE Request
+### DELETE Request
 ```typescript
 const id = 5
 Fetch.destroy(`thisIsADeleteRoute/{$id}`).then((repsonse) => {
