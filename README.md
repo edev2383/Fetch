@@ -94,7 +94,7 @@ What I ended up doing, due to the scope of the project and the number of self co
 
 ```typescript
 export class Action {
-  public async static loadValuesById(id: number) {
+  public static async loadValuesById(id: number) {
     return Fetch.get(`theRouteToValues/${id}`);
   }
 }
